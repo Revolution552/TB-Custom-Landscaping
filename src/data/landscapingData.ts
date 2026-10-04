@@ -417,6 +417,16 @@ export const FAQS: FaqItem[] = [
   },
   {
     category: 'Vuba Stone',
+    question: 'How does Virginia weather, temperature, and humidity affect resin curing time?',
+    answer: 'Resin-bound polyurethane cures via exothermic cross-linking governed by ambient and surface temperatures. In optimal conditions (60°F–80°F), light foot traffic is safe in 12–16 hours and vehicles in 24–48 hours. In hot summer weather (>85°F), cure time accelerates to 4–6 hours (we pour at dawn with shade canopies). In cooler weather (45°F–60°F), we dose with manufacturer-approved catalyst accelerators to maintain reliable cure times. Installations are paused if temperatures drop below 40°F.'
+  },
+  {
+    category: 'Vuba Stone',
+    question: 'What happens if it rains unexpectedly while or right after resin is poured?',
+    answer: 'Uncured polyurethane is vulnerable to liquid moisture during the first 3–5 hours before initial gelation. If exposed to rain before set, the resin can foam or turn milky. TB Custom continuously monitors live Doppler radar and guarantees zero-risk weather rescheduling. If sudden pop-up coastal rain develops, our crew deploys heavy-duty pole-elevated rain canopies. Once cured (after 12–24 hours), the surface becomes 100% water-permeable and immune to rain.'
+  },
+  {
+    category: 'Vuba Stone',
     question: 'Will Vuba Stone crack during Virginia winter freeze/thaw cycles?',
     answer: 'No. Unlike rigid concrete or brittle asphalt, resin-bound stone possesses inherent tensile flexibility. Because it is porous, water passes straight through into the base rather than trapping beneath the surface, eliminating the hydraulic pressure that causes frost heave and surface spalling.'
   },
@@ -434,6 +444,21 @@ export const FAQS: FaqItem[] = [
     category: 'Process & Pricing',
     question: 'How do I request a quote and how does Jobber integration work?',
     answer: 'You can submit our quick quote form or click the "Jobber Request" button. Your project details, photos, and address immediately feed into our Jobber client management system. We contact you within 24 business hours to schedule an on-site consultation and provide a detailed, itemized estimate with 3D project visualizations.'
+  },
+  {
+    category: 'Vuba Stone',
+    question: 'Does Vuba Stone permeable paving comply with Chesapeake Bay Preservation Act (CBPA) impervious surface limits in Tidewater VA?',
+    answer: 'Yes. In waterfront buffer and Resource Protection Areas (RPAs) throughout Gloucester County, Mathews, and Tidewater Virginia, local zoning often strictly caps impervious ground cover. Because Vuba Stone installed over an open-graded aggregate base provides an infiltration rate exceeding 850 gallons/hour per square yard, it qualifies as 100% permeable surfacing, helping homeowners secure county zoning approvals while preventing polluted runoff into Chesapeake Bay tributaries.'
+  },
+  {
+    category: 'Process & Pricing',
+    question: 'What is the typical cost per square foot for Vuba Stone resin vs pavers in Gloucester County, VA?',
+    answer: 'A certified Vuba Stone overlay installed over an existing sound concrete or asphalt base typically ranges from $12 to $19 per square foot. Full new installations with deep excavation, geotextile sub-base, and open-graded permeable stone base typically range from $22 to $34 per square foot. This is comparable to high-end interlocking pavers while providing superior tensile flexibility, zero weed penetration, and a 15-year certified manufacturer warranty.'
+  },
+  {
+    category: 'Hardscaping',
+    question: 'Which areas in Tidewater and Coastal Virginia do you service for hardscaping and Vuba Stone?',
+    answer: 'TB Custom Landscaping is based in Gloucester, VA and provides daily service across Gloucester County (Gloucester Courthouse, Hayes, Ordinary, Ware Neck, Achilles, Bena), Mathews County, Historic Yorktown, Williamsburg, James City County, and Newport News / Poquoson.'
   },
   {
     category: 'Maintenance',

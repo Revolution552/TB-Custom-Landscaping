@@ -33,12 +33,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal, activeSection 
 
   const navLinks = [
     { label: 'Hardscaping', href: '#hardscaping' },
-    { label: 'Vuba Stone (Resin)', href: '#vuba-stone', isSpecial: true },
-    { label: 'Craftsmanship', href: '#craftsmanship' },
-    { label: 'Secondary Services', href: '#secondary-services' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Service Areas', href: '#service-areas' },
-    { label: 'Reviews', href: '#reviews' },
+    { label: 'Vuba Stone', href: '#vuba-stone', isSpecial: true },
+    { label: 'AR Visualizer', href: '#ar-visualizer' },
+    { label: 'Soil & Drainage', href: '#drainage-health' },
+    { label: 'Materials Studio', href: '#material-selector' },
+    { label: 'Size Calculator', href: '#sqft-calculator' },
+    { label: 'Job Tracker', href: '#project-status' },
   ];
 
   return (

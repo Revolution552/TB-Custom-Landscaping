@@ -13,7 +13,8 @@ import {
   FileCheck,
   ExternalLink,
   Code,
-  X
+  X,
+  Ruler
 } from 'lucide-react';
 import { COMPANY_INFO, SERVICE_AREAS } from '../data/landscapingData';
 import { LeadFormData } from '../types';
@@ -23,6 +24,7 @@ interface LeadCaptureJobberProps {
     service?: string;
     sqFt?: string;
     budget?: string;
+    notes?: string;
   };
 }
 
@@ -54,7 +56,10 @@ export const LeadCaptureJobber: React.FC<LeadCaptureJobberProps> = ({ prefillDat
         ...prev,
         serviceType: prefillData.service || prev.serviceType,
         estimatedSqFt: prefillData.sqFt || prev.estimatedSqFt,
-        budgetRange: prefillData.budget || prev.budgetRange
+        budgetRange: prefillData.budget || prev.budgetRange,
+        projectNotes: prefillData.notes 
+          ? (prev.projectNotes ? `${prev.projectNotes}\n\n${prefillData.notes}` : prefillData.notes)
+          : prev.projectNotes
       }));
     }
   }, [prefillData]);
@@ -314,14 +319,41 @@ export const LeadCaptureJobber: React.FC<LeadCaptureJobberProps> = ({ prefillDat
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-bold text-[#a3907c] uppercase tracking-wider mb-1.5">
-                        Approximate Project Size
-                      </label>
+                      <div className="flex items-center justify-between mb-1.5">
+                        <label className="text-[11px] font-bold text-[#a3907c] uppercase tracking-wider">
+                          Approximate Project Size *
+                        </label>
+                        <a 
+                          href="#sqft-calculator" 
+                          className="text-[10px] text-[#a3907c] hover:text-white underline font-semibold flex items-center"
+                        >
+                          <Ruler className="w-3 h-3 mr-1" />
+                          <span>Size Calculator</span>
+                        </a>
+                      </div>
+
+                      {formData.estimatedSqFt && !['Under 300 Sq.Ft.', '300 - 650 Sq.Ft.', '650 - 1,200 Sq.Ft.', '1,200 - 2,500 Sq.Ft.', 'Over 2,500 Sq.Ft.', 'Not Sure / Need Measurement'].includes(formData.estimatedSqFt) && (
+                        <div className="mb-2 p-2 bg-[#1a2521] border border-[#a3907c]/40 rounded text-xs text-white flex items-center justify-between">
+                          <span className="flex items-center text-[11px] font-semibold text-[#a3907c]">
+                            <Ruler className="w-3.5 h-3.5 mr-1 text-[#a3907c]" />
+                            Applied from Calculator:
+                          </span>
+                          <span className="font-mono text-white text-[11px] font-bold truncate max-w-[200px]">
+                            {formData.estimatedSqFt}
+                          </span>
+                        </div>
+                      )}
+
                       <select
                         value={formData.estimatedSqFt}
                         onChange={(e) => setFormData({ ...formData, estimatedSqFt: e.target.value })}
                         className="w-full min-h-[48px] px-4 py-3 rounded-sm border border-white/15 bg-[#121816] text-base sm:text-sm text-white focus:outline-none focus:ring-1 focus:ring-[#a3907c] focus:border-[#a3907c] transition"
                       >
+                        {formData.estimatedSqFt && !['Under 300 Sq.Ft.', '300 - 650 Sq.Ft.', '650 - 1,200 Sq.Ft.', '1,200 - 2,500 Sq.Ft.', 'Over 2,500 Sq.Ft.', 'Not Sure / Need Measurement'].includes(formData.estimatedSqFt) && (
+                          <option value={formData.estimatedSqFt}>
+                            📐 {formData.estimatedSqFt}
+                          </option>
+                        )}
                         <option value="Under 300 Sq.Ft.">Small Walkway / Step Landing (&lt; 300 sq ft)</option>
                         <option value="300 - 650 Sq.Ft.">Medium Patio / Pool Surround (300 – 650 sq ft)</option>
                         <option value="650 - 1,200 Sq.Ft.">Large Patio / Outdoor Living (650 – 1,200 sq ft)</option>

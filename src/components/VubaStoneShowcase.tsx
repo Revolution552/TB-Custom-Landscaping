@@ -13,7 +13,8 @@ import {
   Building2, 
   SlidersHorizontal,
   Info,
-  ExternalLink
+  ExternalLink,
+  Thermometer
 } from 'lucide-react';
 import { 
   VUBA_SWATCHES, 
@@ -682,12 +683,21 @@ export const VubaStoneShowcase: React.FC<VubaStoneShowcaseProps> = ({ onOpenQuot
               <Info className="w-4 h-4 text-[#a3907c] shrink-0" />
               <span>All TB Custom Landscaping Vuba installations include our 5-Year Workmanship Warranty & Lifetime UV Guarantee.</span>
             </div>
-            <button
-              onClick={onOpenQuoteModal}
-              className="w-full sm:w-auto min-h-[48px] px-6 py-3 rounded-sm bg-[#a3907c] hover:bg-white text-[#0d1210] text-xs font-bold uppercase tracking-wider transition shadow flex items-center justify-center active:scale-[0.98]"
-            >
-              Get Vuba Stone Estimate
-            </button>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto">
+              <a
+                href="#weather-curing"
+                className="min-h-[48px] px-5 py-3 rounded-sm bg-white/5 hover:bg-white/10 text-white/80 hover:text-white text-xs font-bold uppercase tracking-wider border border-white/10 transition flex items-center justify-center space-x-1.5 active:scale-[0.98]"
+              >
+                <Thermometer className="w-3.5 h-3.5 text-[#a3907c]" />
+                <span>Weather & Curing Guide</span>
+              </a>
+              <button
+                onClick={onOpenQuoteModal}
+                className="min-h-[48px] px-6 py-3 rounded-sm bg-[#a3907c] hover:bg-white text-[#0d1210] text-xs font-bold uppercase tracking-wider transition shadow flex items-center justify-center active:scale-[0.98]"
+              >
+                Get Vuba Stone Estimate
+              </button>
+            </div>
           </div>
         </div>
 

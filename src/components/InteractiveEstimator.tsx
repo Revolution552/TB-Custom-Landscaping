@@ -12,13 +12,23 @@ import {
 
 interface InteractiveEstimatorProps {
   onTransferToForm: (data: { service: string; sqFt: string; budget: string }) => void;
+  externalSqFt?: number;
 }
 
-export const InteractiveEstimator: React.FC<InteractiveEstimatorProps> = ({ onTransferToForm }) => {
+export const InteractiveEstimator: React.FC<InteractiveEstimatorProps> = ({ 
+  onTransferToForm,
+  externalSqFt 
+}) => {
   const [projectType, setProjectType] = useState<'vuba-overlay' | 'vuba-new-base' | 'paver-patio' | 'retaining-wall' | 'drainage'>('vuba-new-base');
-  const [sqFt, setSqFt] = useState<number>(650);
+  const [sqFt, setSqFt] = useState<number>(externalSqFt || 650);
   const [includeLighting, setIncludeLighting] = useState<boolean>(true);
   const [includeExcavation, setIncludeExcavation] = useState<boolean>(true);
+
+  React.useEffect(() => {
+    if (externalSqFt && externalSqFt > 0) {
+      setSqFt(externalSqFt);
+    }
+  }, [externalSqFt]);
 
   // Calculate realistic Gloucester County pricing ranges
   const calculateEstimate = () => {
